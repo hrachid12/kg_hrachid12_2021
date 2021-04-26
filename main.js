@@ -11,6 +11,7 @@ const num_to_str = {
     0: 'Zero'
 };
 
+let res = '';
 for (let i = 2; i < process.argv.length; i++) {
     let num_as_string = '';
     let curr_num = parseInt(process.argv[i]);
@@ -23,6 +24,7 @@ for (let i = 2; i < process.argv.length; i++) {
         num_as_string = num_to_str[remainder] + num_as_string;
     } while (curr_num > 0)
 
-    console.log(num_as_string);
+    res += num_as_string + ', ';
 }
 
+console.log(res.slice(0, -2));
